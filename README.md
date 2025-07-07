@@ -6,11 +6,11 @@
 
 #  Features
 
-**Protocol-Specific Sniffing** — Targeted capture of known services.
-**Credential Detection** — Sniffs unencrypted login credentials (e.g., FTP, Telnet).
-**HTTP/HTTPS Monitoring** — Detects GET/POST requests, form submissions, and encrypted HTTPS sessions.
-**Built-in Multithreading** — Runs multiple sniffers in parallel without blocking.
-**Clean CLI Options** — Easily specify interface and target protocol via flags.
+**Protocol-Specific Sniffing** — Targeted capture of known services. <br>
+**Credential Detection** — Sniffs unencrypted login credentials (e.g., FTP, Telnet).<br>
+**HTTP/HTTPS Monitoring** — Detects GET/POST requests, form submissions, and encrypted HTTPS sessions. <br>
+**Built-in Multithreading** — Runs multiple sniffers in parallel without blocking. <br>
+**Clean CLI Options** — Easily specify interface and target protocol via flags. <br>
 
 
 
