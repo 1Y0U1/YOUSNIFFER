@@ -8,6 +8,9 @@ Credential Detection from unencrypted channels <br>
 HTTP/HTTPS from Sniffing <br>
 Built-in Multi-Threading with clean CLI OPTIONS <br>
 
-  <hr>
+# Used for Both  Offensive and Defensive Purpose
+<b>
+Note -->  Must Be Run With sudo  or  root user.
+</b>
 
   
