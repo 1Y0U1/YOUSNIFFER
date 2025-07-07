@@ -15,6 +15,9 @@ Note -->  Must Be Run With sudo  or  root user.
 
 # Installation
 git clone https://github.com/1Y0U1/YOUSNIFFER.git <br>
+
 cd YOUSNIFFER  <br>
+
 sudo chmod +x setup.sh  <br>
+
 bash setup.sh  <br>
