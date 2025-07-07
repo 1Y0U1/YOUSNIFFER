@@ -13,4 +13,8 @@ Built-in Multi-Threading with clean CLI OPTIONS <br>
 Note -->  Must Be Run With sudo  or  root user.
 </b>
 
-  
+# Installation
+git clone https://github.com/1Y0U1/YOUSNIFFER.git
+cd YOUSNIFFER
+sudo chmod +x setup.sh
+bash setup.sh
