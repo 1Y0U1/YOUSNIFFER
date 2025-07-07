@@ -1,23 +1,33 @@
 # YOUSNIFFER: Ruby Network Sniffer & Credential Catcher
 
-YOUSNIFFER is a Ruby-based network packet sniffer that captures credentials and login attempts from various protocols (FTP, TELNET, SSH, SMB, MYSQL, RDP, LDAP) and also monitors HTTP/HTTPS traffic. <br>
+**YOUSNIFFER** is a Ruby-based network packet sniffer designed to capture credentials and login attempts across various protocols (FTP, TELNET, SSH, SMB, MYSQL, RDP, LDAP) and to monitor HTTP/HTTPS traffic in real-time.
 
-# Featuers:
-Protocols-Specfic Packet Sniffing <br>
-Credential Detection from unencrypted channels <br>
-HTTP/HTTPS from Sniffing <br>
-Built-in Multi-Threading with clean CLI OPTIONS <br>
+---
 
-# Used for Both  Offensive and Defensive Purpose
-<b>
-Note -->  Must Be Run With sudo  or  root user.
-</b>
+#  Features
 
-# Installation
-git clone https://github.com/1Y0U1/YOUSNIFFER.git <br>
+**Protocol-Specific Sniffing** — Targeted capture of known services.
+**Credential Detection** — Sniffs unencrypted login credentials (e.g., FTP, Telnet).
+**HTTP/HTTPS Monitoring** — Detects GET/POST requests, form submissions, and encrypted HTTPS sessions.
+**Built-in Multithreading** — Runs multiple sniffers in parallel without blocking.
+**Clean CLI Options** — Easily specify interface and target protocol via flags.
 
-cd YOUSNIFFER  <br>
 
-sudo chmod +x setup.sh  <br>
 
-bash setup.sh  <br>
+##  Use Cases
+
+**Offensive Security**: Credential harvesting on internal networks (e.g., during pentesting).
+**Defensive Monitoring**: Detect protocol-based login attempts and plaintext credentials.
+
+ **Note**: Must be run with `sudo` or as the `root` user to access network interfaces in promiscuous mode.
+
+
+
+##  Installation
+git clone https://github.com/1Y0U1/YOUSNIFFER.git
+
+cd YOUSNIFFER
+
+chmod +x setup.sh
+
+sudo ./setup.sh
