@@ -70,8 +70,6 @@ end
   opts.on("Example: ruby yousniffer -i <interface> -a")
   opts.on("Example: ruby yousniffer -i <interface>  -p ftp ")
   opts.on("Example: ruby yousniffer -i <interface> -H")
-  opts.on("Example: ruby yousniffer -i <interface> -d")
-
 
 end.parse!
 
@@ -299,54 +297,54 @@ end
 
 if options[:https]
   capture_https_traffic_with_domain(iface)
-end
+
 
 
 #Capture HTTP/HTTPS traffic  Function
-    if options[:domain] 
+    elsif options[:domain] 
      capture_http_and_https_packets(iface)
-    end
+    
 
 #Capture FTP Passwords Function
-     if options[:password] && ftp.downcase == 'ftp'
+     elsif options[:password] && ftp.downcase == 'ftp'
       capture_FTP_passwords(iface)
-    end
+    
 
 #Capture telnet Passowrds Function
-      if options[:password] && telnet.downcase == 'telnet'
+      elsif options[:password] && telnet.downcase == 'telnet'
        capture_TELNET_passwords(iface)
-     end
+     
 
 #Capture ssh Passwords Function
-     if options[:password] && ssh.downcase == 'ssh'
+     elsif options[:password] && ssh.downcase == 'ssh'
       capture_ssh_passwords(iface)
-    end
+    
 
 #Capture smb Passwords Function
-if options[:password] && smb.downcase == 'smb'
+elsif options[:password] && smb.downcase == 'smb'
   capture_smb_passwords(iface)
-end
+
 
 #Capture mysql Passwords Function
-if options[:password] && mysql.downcase == 'mysql'
+elsif options[:password] && mysql.downcase == 'mysql'
   capture_mysql_passwords(iface)
-end
+
 
 
 #Capture RDP Passwords Functions 
-if options[:password] && rdp.downcase == 'rdp'
+elsif options[:password] && rdp.downcase == 'rdp'
   capture_rdp_passwords(iface)
-end
+
 
 
 #Capture LDAP 
-if options[:password] && ldap.downcase == 'ldap'
+elsif options[:password] && ldap.downcase == 'ldap'
   capture_ldap_passwords(iface)
-end
+
 
 
 #Capture all Packets
-if options[:all]
+elsif options[:all]
   puts "[+] Sniffing All Protocols (FTP, SSH, TELNET, SMB, MYSQL, RDP, LDAP)".colorize(:blue).bold
 
   threads = []
@@ -362,6 +360,9 @@ if options[:all]
 
 
   threads.each(&:join)
+
+
+else
+  puts "ERROR: Missing Options"
+  exit
 end
-
-
