@@ -70,6 +70,8 @@ end
   opts.on("Example: ruby yousniffer -i <interface> -a")
   opts.on("Example: ruby yousniffer -i <interface>  -p ftp ")
   opts.on("Example: ruby yousniffer -i <interface> -H")
+  opts.on("Example: ruby yousniffer -i <interface> -d")
+
 
 end.parse!
 
