@@ -16,7 +16,7 @@
 
 ##  Use Cases
 
-**Offensive Security**: Credential harvesting on internal networks (e.g., during pentesting).
+**Offensive Security**: Credential harvesting on internal networks (e.g., during pentesting). <br>
 **Defensive Monitoring**: Detect protocol-based login attempts and plaintext credentials.
 
  **Note**: Must be run with `sudo` or as the `root` user to access network interfaces in promiscuous mode.
