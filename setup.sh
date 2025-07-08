@@ -22,4 +22,4 @@ clear
 echo ""
 echo Setup Complete GO AHEAD!!!!!!        
 echo ""
-echo "----->Now you can use youfinder from everywhere<-----"
+echo "----->Now you can use yousniffer from everywhere<-----"
