@@ -171,7 +171,7 @@ end
         unless buffer.empty?
           puts "[Captured] #{buffer}".colorize(:green)
           puts "From #{pkt.ip.src} --> #{pkt.ip.dst}".colorize(:cyan)
-          puts "Login Detected"
+          puts "Telnet Login Detected"
           puts "-" * 100
           buffer = ""
         end
