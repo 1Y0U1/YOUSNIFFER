@@ -4,8 +4,8 @@ echo -e "\e[5m\e[1;34m$(figlet 'YOUSNIFFER')\e[0m"
 echo Setup Starting........
 
 sudo apt-get install ruby   
-
-
+echo ""
+sudo apt install libpcap-dev build-essential
 echo ""
 sudo gem install colorize
 echo ""
