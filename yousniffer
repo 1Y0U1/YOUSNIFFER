@@ -92,7 +92,7 @@ end
 
 
 def capture_http_and_https_packets(iface)
-  puts "[*] Sniffing HTTP & HTTPS traffic on #{iface}...".colorize(:green).bold
+  puts "[*] Sniffing HTTP & HTTPS traffic on #{iface}......".colorize(:green).bold
   puts ""
   PacketGen.capture(iface: iface, promisc: true) do |pkt|
     next unless pkt.is?('TCP')
@@ -128,7 +128,7 @@ end
 # Capture FTP passwords
 def capture_FTP_passwords(iface)
 
-   puts "[+]Sniffing FTP Credentials".colorize(:green).bold
+   puts "[+]Sniffing FTP Credentials......".colorize(:green).bold
    puts ""  
   PacketGen.capture(iface: iface, promisc: true) do |pkt|  
     next unless pkt.is?('TCP')
@@ -151,7 +151,7 @@ end
 
 #Capture Telenet Passwords
 def  capture_TELNET_passwords(iface)
-        puts "[+] Sniffing Telnet Credentials".colorize(:green).bold
+        puts "[+] Sniffing Telnet Credentials......".colorize(:green).bold
         puts ""
         PacketGen.capture(iface:iface, promisc: true) do |pkt|
           next unless pkt.is?('TCP')
@@ -178,7 +178,7 @@ def  capture_TELNET_passwords(iface)
 
 #Capture SSH passwords
            def capture_ssh_passwords(iface)
-             puts "[+] Sniffing ssh Credentials but Remember it is encrypted".colorize(:green).bold
+             puts "[+] Sniffing ssh Credentials but Remember it is encrypted......".colorize(:green).bold
              puts ""
              PacketGen.capture(iface:iface, promisc: true) do |pkt|
               next unless pkt.is?('TCP')
@@ -197,7 +197,7 @@ def  capture_TELNET_passwords(iface)
 
      #Capture  SMB Passwords
            def capture_smb_passwords(iface)
-            puts "[+] Sniffing SMB Crenddentials but Remember its is encrypted".colorize(:green).bold
+            puts "[+] Sniffing SMB Crenddentials but Remember its is encrypted......".colorize(:green).bold
             puts ""
             PacketGen.capture(iface:iface, promisc: true ) do |pkt|
               next unless pkt.is?('TCP')
@@ -216,7 +216,7 @@ def  capture_TELNET_passwords(iface)
         
       #Capture MYSQL Passwords
       def capture_mysql_passwords(iface)
-        puts "[+] Sniffing MYSQL Credentials but Remember it is encrypted".colorize(:green).bold
+        puts "[+] Sniffing MYSQL Credentials but Remember it is encrypted......".colorize(:green).bold
         puts ""
         PacketGen.capture(iface:iface, promisc: true) do |pkt|
           next unless pkt.is?('TCP')
@@ -235,7 +235,7 @@ def  capture_TELNET_passwords(iface)
 
       #Capture RDP Packets
       def capture_rdp_passwords(iface)
-      puts "[+] Sniffing RDP Credentials but Remember it is encrypted".colorize(:green).bold
+      puts "[+] Sniffing RDP Credentials but Remember it is encrypted......".colorize(:green).bold
       puts ""
       PacketGen.capture(iface:iface,promisc: true) do |pkt|
         next unless pkt.is?('TCP')
@@ -254,7 +254,7 @@ def  capture_TELNET_passwords(iface)
 
       #Capture LDAP Packets
         def capture_ldap_passwords(iface)
-  puts "[+] Sniffing LDAP packets on interface: #{iface}".colorize(:green).bold
+  puts "[+] Sniffing LDAP packets on interface: #{iface}......".colorize(:green).bold
 
   PacketGen.capture(iface: iface, promisc: true) do |pkt|
     next unless pkt.is?('TCP')
@@ -271,7 +271,7 @@ end
         
 
 def capture_https_traffic_with_domain(iface)
-  puts "[+] Sniffing HTTPS traffic with Domain Name but it can be slow so be Patient (Capture Internal Hostname)".colorize(:green).bold
+  puts "[+] Sniffing HTTPS traffic with Domain Name but it can be slow so be Patient (Capture Internal Hostname)......".colorize(:green).bold
   puts ""
   PacketGen.capture(iface: iface, promisc: true) do |pkt|
         next unless pkt.is?('TCP')
@@ -345,7 +345,7 @@ elsif options[:password] && ldap.downcase == 'ldap'
 
 #Capture all Packets
 elsif options[:all]
-  puts "[+] Sniffing All Protocols (FTP, SSH, TELNET, SMB, MYSQL, RDP, LDAP)".colorize(:blue).bold
+  puts "[+] Sniffing All Protocols (FTP, SSH, TELNET, SMB, MYSQL, RDP, LDAP)......".colorize(:blue).bold
 
   threads = []
 
