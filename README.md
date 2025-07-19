@@ -21,6 +21,7 @@
 
  **Note**: Must be run with `sudo` or as the `root` user 
 
+<img width="842" height="727" alt="Screenshot_2025-07-19_05_41_48" src="https://github.com/user-attachments/assets/a821c0a9-120f-4008-8e3c-83df0d3d514a" />
 
 
 ##  Installation
